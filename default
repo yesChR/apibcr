@@ -1,19 +1,12 @@
 server {
-    listen 80;
-    server_name tudominio.com;
+    #proxy_cache cache;
+    #proxy_cache_valid 200 1s;
+    listen 8080;
+    listen [::]:8080;
+    root /home/site/wwwroot/public; # Changed for Laravel
 
-    root /ruta/a/tu/proyecto/public;  # Ruta a la carpeta public de tu proyecto
-
-    index index.php index.html index.htm;
-
-    location / {
-        try_files $uri $uri/ /index.php$is_args$args;
-    }
-
-    location ~ \.php$ {
-        include snippets/fastcgi-php.conf;
-        fastcgi_pass unix:/var/run/php/php8.0-fpm.sock;  # Ajusta el socket PHP-FPM según tu configuración
-        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-        include fastcgi_params;
+    location / {            
+        index  index.php index.html index.htm hostingstart.html;
+        try_files $uri $uri/ /index.php?$args; # Changed for Laravel
     }
 }
