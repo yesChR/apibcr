@@ -8,5 +8,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     die('Metodo no permitido');
 }
 
-
+echo "hola";
+die();
     require "../src/app/app.php";
