@@ -1,3 +1,3 @@
 <?php
-echo "Hola Yes!";
+    require "./public/index.php";
 ?>
