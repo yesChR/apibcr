@@ -10,4 +10,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 
 echo "hola";
 die();
-    require "../src/app/app.php";
+    require "./src/app/app.php";
