@@ -10,4 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 
 //echo "hola";
 
-require "./src/app/app.php";
+require __DIR__ . "/src/app/app.php";
+
+
+//require "./src/app/app.php";
